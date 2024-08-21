@@ -2,6 +2,26 @@ import { getCabin } from "@/app/_lib/data-service";
 import { EyeSlashIcon, MapPinIcon, UsersIcon } from "@heroicons/react/24/solid";
 import Image from "next/image";
 
+// export const metadata={
+//     title:'cabin'
+// }
+
+export async function generateMetadata({ params }) {
+  /* const { name } = await getCabin(params.cabinId);
+  if (name) {
+    return { title: `Cabin ${name}` };
+  } else {
+    return { title: `Cabin not found` };
+  }*/
+  const cabin = await getCabin(params.cabinId);
+
+  if (cabin && cabin.name) {
+    return { title: `Cabin ${cabin.name}` };
+  } else {
+    return { title: "Cabin not found" };
+  }
+}
+
 // PLACEHOLDER DATA
 /*const cabin = {
   id: 89,
