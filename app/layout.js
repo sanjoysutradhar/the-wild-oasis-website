@@ -12,9 +12,10 @@ const josefin = Josefin_Sans({
   display: "swap",
 });
 
-console.log(josefin);
+// console.log(josefin);
 import "@/app/_styles/globals.css";
 import Header from "@/app/_components/Header";
+import { ReservationProvider } from "@/app/_components/ReservationContext";
 
 // export default function RootLayout({ children }) {
 //   return (
@@ -47,7 +48,9 @@ export default function RootLayout({ children }) {
         </header> */}
         <Header />
         <div className="flex-1 px-8 py-12 grid">
-          <main className="max-w-7xl mx-auto w-full">{children}</main>
+          <main className="max-w-7xl mx-auto w-full">
+            <ReservationProvider>{children}</ReservationProvider>
+          </main>
         </div>
         {/* <footer>Copy right by the wild oasis</footer> */}
       </body>

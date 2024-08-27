@@ -7,6 +7,7 @@ async function Reservation({ cabin }) {
     getSettings(),
     getBookedDatesByCabinId(cabin.id),
   ]);
+  console.log(settings);
   return (
     <div
       className="grid grid-cols-2 relative
